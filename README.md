@@ -2,7 +2,7 @@
 ## Introduction
 Here is my team's smart home control interface
 <p align="center">
-  <img src="image.jpg" width=600><br/>
+  <img src="image.png" width=600><br/>
   <i>Result</i>
 </p>
 
