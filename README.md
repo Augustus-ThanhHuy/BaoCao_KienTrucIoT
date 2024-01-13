@@ -9,3 +9,5 @@ Here is my team's smart home control interface
 ## How to use my code
 * You can use css html javascript to create an interface for user interaction
 * Use google firebase to get data
+* link website: https://liempham2011.github.io/TTKienTrucMayTinh_CuoiKy/
+  
