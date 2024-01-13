@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <title>DangNhap</title>
+  <link rel="stylesheet" href="style_2.css">
+</head>
+<body>
+  <div id="header">
+    <div id="title">
+        <ul>
+            <li><b>Đăng Nhập</b></li>
+        </ul>
+    </div>  
+  </div>
+
+  <div class="sidebar">
+    <ul>
+      <li>
+        <a href="index.html">
+          <img src="image/home.png" alt="TrangChu" title="TrangChu">
+          <span class="text nav-text">Trang Chủ</span>
+        </a>
+      </li>
+      <li>
+        <a href="pKhach.html">
+          <img src="image/tv.png" alt="PhongKhach" title="PhongKhach">
+          <span class="text nav-text">Phòng Khách</span>
+        </a>
+      </li>
+      <li>
+        <a href="pNgu.html">
+          <img src="image/bed.png" alt="PhongNgu" title="PhongNgu">
+          <span class="text nav-text">Phòng Ngủ</span>
+        </a>
+      </li>
+      <li>
+        <a href="pBep.html">
+          <img src="image/bep.png" alt="PhongBep" title="PhongBep">
+          <span class="text nav-text">Phòng Bếp</span>
+        </a>
+      </li>
+      <li>
+        <a href="pKho.html">
+          <img src="image/nhaKho.png" alt="PhongKho" title="PhongKho">
+          <span class="text nav-text">Phòng Kho</span>
+        </a>
+      </li>
+      <li>
+        <a href="chart.html">
+          <img src="image/chart.png" alt="BieuDo" title="BieuDo">
+          <span class="text nav-text">Phân tích</span>
+        </a>
+      </li>
+      <!-- Thêm các mục icon khác tại đây -->
+    </ul>
+
+
+    <ul>
+      <li>
+        <a href="help.html">
+          <img src="image/help.png" alt="Help" title="Help">
+          <span class="text nav-text">Hỗ Trợ</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="main">
+
+    <form action="index.html" method="GET" class="form" id="form-1"  onsubmit="function_dn(event)">
+    
+        <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input id="email" name="email" type="text" placeholder="VD: email@domain.com" class="form-control">
+            <span class="form-message"></span>
+          </div>
+  
+          <div class="form-group">
+            <label for="password" class="form-label">Mật khẩu</label>
+            <input id="password" name="password" type="password" placeholder="Nhập mật khẩu" class="form-control">
+            <span class="form-message"></span>
+          </div>
+  
+          <button class="form-submit">Đăng nhập</button>
+        </form>
+  
+  
+  </div>
+</div>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+   https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+
+<script>
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAM-vAAigAsCzb37XSVO4-SUcJlrJtaUMI",
+  authDomain: "esp32-firebase-be203.firebaseapp.com",
+  databaseURL: "https://esp32-firebase-be203-default-rtdb.firebaseio.com",
+  projectId: "esp32-firebase-be203",
+  storageBucket: "esp32-firebase-be203.appspot.com",
+  messagingSenderId: "273054303454",
+  appId: "1:273054303454:web:dc8ce5201711e962d2ae4f"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+</script>
+
+<script>
+  function function_dn(event) {
+    event.preventDefault();
+    var email = document.getElementById('email').value;
+    var passWord = document.getElementById('password').value;
+
+    if (email === "" || password === "") {
+    alert("Vui lòng nhập đầy đủ thông tin!");
+    return;
+  }
+
+    var dbRef_9 = firebase.database().ref('ThongTin').child('email');
+    var dbRef_8 = firebase.database().ref('ThongTin').child('passWord');
+
+    dbRef_9.on('value', function(snapshot) {
+      var emailValue = snapshot.val();
+      dbRef_8.on('value', function(snapshot) {
+        var passwordValue = snapshot.val();
+
+        if (email === emailValue && passWord === passwordValue) {
+          alert("Dang nhap thanh cong");
+          window.location.href = "index.html";
+        } else {
+          alert("Email hoac mat khau khong chinh xac");
+        }
+      });
+    });
+}
+</script>
+
+</body>
+</html>

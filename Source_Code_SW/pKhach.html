@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <title>PhongKhach</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="header">
+    <div id="title">
+        <ul>
+            <li><b>Phòng Khách</b></li>
+        </ul>
+    </div>
+    <div id= "banner">
+        <div class="tag">
+            <button onclick="function_show1() " id="btnShow"><b>Show</b></button>
+        </div>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    
+    <ul>
+      <li>
+        <a href="index.html">
+          <img src="image/home.png" alt="TrangChu" title="TrangChu">
+          <span class="text nav-text">Trang Chủ</span>
+        </a>
+      </li>
+      <li>
+        <a href="pKhach.html">
+          <img src="image/tv.png" alt="PhongKhach" title="PhongKhach">
+          <span class="text nav-text">Phòng Khách</span>
+        </a>
+      </li>
+      <li>
+        <a href="pNgu.html">
+          <img src="image/bed.png" alt="PhongNgu" title="PhongNgu">
+          <span class="text nav-text">Phòng Ngủ</span>
+        </a>
+      </li>
+      <li>
+        <a href="pBep.html">
+          <img src="image/bep.png" alt="PhongBep" title="PhongBep">
+          <span class="text nav-text">Phòng Bếp</span>
+        </a>
+      </li>
+      <li>
+        <a href="pKho.html">
+          <img src="image/nhaKho.png" alt="PhongKho" title="PhongKho">
+          <span class="text nav-text">Phòng Kho</span>
+        </a>
+      </li>
+      <li>
+        <a href="chart.html">
+          <img src="image/chart.png" alt="BieuDo" title="BieuDo">
+          <span class="text nav-text">Phân tích</span>
+        </a>
+      </li>
+      <!-- Thêm các mục icon khác tại đây -->
+    </ul>
+
+    <ul>
+      <li>
+        <a href="help.html">
+          <img src="image/help.png" alt="Help" title="Help">
+          <span class="text nav-text">Hỗ Trợ</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="hienthiphong">
+    <a href="#">
+      <img src="image/living-room.png" alt="">
+    </a>
+  </div>
+  <div id="main">
+    <div id="top">
+        <div id="time">
+          <script>
+            function dongho() {
+            var time = new Date();
+            var gio = time.getHours();
+            var phut = time.getMinutes();
+            var giay = time.getSeconds();
+            if (gio < 10) 
+            gio = "0" + gio;
+            if (phut < 10) 
+            phut = "0" + phut;
+            if (giay < 10) 
+            giay = "0" + giay;
+            document.getElementById("time").innerHTML = gio + ":" + phut + ":" + giay;
+            setTimeout("dongho()", 1000);
+            };
+            dongho();
+            </script> 
+        </div>
+      <div id="sensors">
+        <div id="k">
+              <h2><img src="image\fire.png" id="khoi1"></h2>
+              <h7 id="khoi"></h7>
+              <p>Khí Gas</p>
+            </div>
+            <div id="nd"> 
+              <h2><img src="image\hot.png" id="nd1"></h2>
+              <h7 id="nhietdo"></h7>
+              <p>Nhiệt độ</p>
+            </div>
+            <div id="da"> 
+              <h2><img src="image\do_am.png" id="da1"></h2>
+              <h7 id="doam"></h7>
+              <p>Độ ẩm</p>
+            </div>
+            <div id="bm"> 
+              <h2><img src="image\bui.png" id="bm1"></h2>
+              <h7 id="bui"></h7>
+              <p>Không Khí</p>
+            </div>
+          </div>
+      </div>
+    
+    <!--The dieu khien-->
+      <div id="bot">
+        <div id="tag1">
+            <img src="image\chay_1.png"id="call">
+            <button type="button" id="btn1" >On</button>
+            <button type="button" id="btn2" >Off</button>
+            <h2>SOS</h2>
+        </div>
+
+        <div id="tag2">
+          <img src="image\turn_off.png"id="led">
+          <button type="button" id="btn3" >On</button>
+          <button type="button" id="btn4" >Off</button><br>
+          <button type="button" onclick="function_inc()"  id="btnInc">+</button>
+          <button type="button" onclick="function_dec()" id="btnDec">-</button>
+          <h2>Máy lạnh</h2>
+        </div>
+
+        <div id="tag3">
+          <img src="image\mayloc_chuabac.png" id="loc">
+          <input type="range" min="1" max="100" class="slider" id="myRange1" value="0"><br>
+          <button type="button" id="btn5" >On</button>
+          <button type="button" id="btn6" >Off</button>
+          <h2>Lọc</h2>
+        </div>
+      </div>
+
+ 
+      </div>
+        <div id= "footer">
+            <ul>
+              <span class="navlink_icon">
+                <i class='bx bx-envelope'></i>
+              </span>
+              <span class="navlink">Email: 21139022@student.hcmute.edu.vn</span><br>
+              <span class="navlink_icon">
+                <i class='bx bxl-facebook-circle'></i>
+              </span>
+              <span class="navlink">Facebook: ThanhHuy</span><br>
+              <span class="navlink_icon">
+                <i class='bx bxl-instagram-alt' ></i>
+              </span>
+              <span class="navlink">Instagram: pam.sptth</span>
+           </ul>
+    </div>
+</div>
+
+<script src="function.js"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+ https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+
+<script>
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAM-vAAigAsCzb37XSVO4-SUcJlrJtaUMI",
+  authDomain: "esp32-firebase-be203.firebaseapp.com",
+  databaseURL: "https://esp32-firebase-be203-default-rtdb.firebaseio.com",
+  projectId: "esp32-firebase-be203",
+  storageBucket: "esp32-firebase-be203.appspot.com",
+  messagingSenderId: "273054303454",
+  appId: "1:273054303454:web:dc8ce5201711e962d2ae4f"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+</script>
+<script>
+//functions
+var khoi = document.getElementById('khoi');
+var dbRef = firebase.database().ref('PhongKhach').child('Khoi');
+var nhietDo = document.getElementById('nhietdo');
+var dbRef2 = firebase.database().ref('PhongKhach').child('Nhietdo');  
+var doAm = document.getElementById('doam');
+var dbRef3 = firebase.database().ref('PhongKhach').child('Doam');
+var bui = document.getElementById('bui');
+var dbRef4 = firebase.database().ref('PhongKhach').child('Bui');
+</script>
+
+<script>
+  function function_show1() {
+    dbRef.on('value', snap => {
+      var khoido = snap.val();
+      khoi.innerText = khoido;
+    });
+  
+    dbRef2.on('value', snap => {
+      var nhiet = snap.val();
+      nhietDo.innerText = nhiet + " °C";
+    });
+  
+    dbRef3.on('value', snap => {
+      var am = snap.val();
+      doAm.innerText = am + " %";
+    });
+  
+    dbRef4.on('value', snap => {
+      var buiMin = snap.val();
+      bui.innerText = buiMin.toFixed(2) + " PPM";
+    });
+  }
+  </script>
+
+
+<script>
+function function_inc(){
+  var dt = firebase.database().ref("PhongKhach").child('Nhietdo')
+  dt.transaction((currentValue) => {
+      if (currentValue !== null) {
+        return currentValue + 1;
+      }
+      return 1;
+    }, (error, committed, snapshot) => {
+      if (error) {
+        console.error('Transaction failed:', error);
+      } else if (!committed) {
+        console.warn('Transaction aborted');
+      } else {
+        console.log('Transaction completed!');
+        const updatedValue = snapshot.val();
+        console.log('Updated value:', updatedValue);
+      }
+    });
+}
+</script>
+
+<script>
+function function_dec(){
+  var dt = firebase.database().ref("PhongKhach").child('Nhietdo')
+  dt.transaction((currentValue) => {
+      if (currentValue !== null) {
+        // Giam giá trị hiện tại lên 1 đơn vị
+        return currentValue -1;
+        }
+        // Nếu giá trị hiện tại chưa tồn tại, trả về 1
+        return 1;
+      }, (error, committed, snapshot) => {
+        if (error) {
+          console.error('Transaction failed:', error);
+        } else if (!committed) {
+          console.warn('Transaction aborted');
+        } else {
+          console.log('Transaction completed!');
+          const updatedValue = snapshot.val();
+          console.log('Updated value:', updatedValue);
+        }
+      });
+  }
+</script>
+
+<script>
+  function checkDustChange1(){
+    dbRef4.on('value', function(snapshot) {
+    var dRef4Value = snapshot.val();
+    if (dRef4Value > 1000) {
+      btn5.click();
+    } 
+  });
+  }
+  setInterval(checkDustChange1, 1000);
+  
+</script>
+
+
+<!--Kiem tra trang thai cua cac thiet bi-->
+<script>
+  function getDeviceStatus() {
+  var databaseRef = firebase.database().ref("PhongKhach").child("thietbi"); 
+  var audio = new Audio("image/chuong.mp3");
+
+  databaseRef.on('value', function(snapshot) {
+    var data = snapshot.val(); 
+
+      var baochay = data.baochay;
+      var maylanh = data.maylanh;
+      var loc = data.loc;
+
+  //kiem tra bao chay
+
+      if (baochay == "1") {
+        img1.src = 'image/chay_2.png'; 
+        audio.play();
+      } else if (baochay == "0") {
+        img1.src = 'image/chay_1.png';
+        audio.pause();
+        audio.currentTime = 0;
+      }
+
+  // Kiểm tra trạng thái máy lạnh
+        if (maylanh == "1") {
+        img2.src = 'image/turn_on.png';
+      } else if (maylanh == "0") {
+        img2.src = 'image/turn_off.png';
+      }
+  
+  // Kiểm tra trạng thái máy lọc
+      if (loc == "1") {
+        img3.src = 'image/so1.png' ;
+      }
+       else if(loc == "2")
+      {
+        img3.src = 'image/so2.png';
+      }
+      else if(loc == "3")
+      {
+        img3.src = 'image/so3.png' ;
+      }
+      else if(loc == "0")
+      {
+        img3.src = 'image/mayloc_chuabac.png';
+      }
+    
+  });
+}
+setInterval(getDeviceStatus, 1000);
+
+
+</script>
+</body>
+</html>
